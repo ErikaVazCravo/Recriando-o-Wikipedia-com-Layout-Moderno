@@ -1,0 +1,202 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #202122;
+}
+
+a {
+    color: #0645ad;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+a:hover {
+    text-decoration: underline;
+    color: #0b0080;
+}
+
+ul {
+    list-style: none;
+    padding-left: 5px;
+    margin: 0;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0 0.5rem 0;
+}
+.logo img {
+    max-width: 100px; 
+    height: auto;
+}
+
+.bar {
+    background-color: #f9f9fb;
+    padding: 15px;
+    border-top: solid 1px #cdcdcd;
+    border-bottom: solid 1px #cdcdcd;
+    margin-bottom: 1rem;
+}
+
+.content {
+    max-width: 1440px;
+    margin: auto;
+    display: grid;
+    grid-gap: 3rem;
+    gap: 3rem;
+    grid-template-areas: "sidebar main anchors";
+    grid-template-columns: minmax(0,15rem) minmax(0,2.5fr) minmax(0,15rem);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.sidebar {
+    grid-area: sidebar;
+    border-right: solid 1px #cdcdcd;
+    padding-right: 15px;
+    padding-top: 2rem;
+    min-width: 220px;
+}
+.sidebar h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #222;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 0.5rem;
+}
+.sidebar ul li {
+    margin-bottom: 0.7rem;
+}
+.sidebar figure {
+    margin: 2rem 0 1rem 0;
+}
+.sidebar img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+.sidebar figcaption {
+    font-size: 0.95rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+.sidebar .info {
+    background: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1rem;
+    font-size: 0.98rem;
+    color: #222;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+    line-height: 1.6;
+}
+
+.main {
+    grid-area: main;
+    padding: 2rem 0;
+}
+.main h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: #222;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 0.5rem;
+}
+.main h2 {
+    font-size: 1.4rem;
+    margin-top: 2rem;
+    margin-bottom: 0.7rem;
+    color: #444;
+    border-left: 4px solid #3366cc;
+    padding-left: 0.5rem;
+}
+.main h3 {
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 600;
+}
+.main p {
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+.main ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1.2rem;
+}
+.main ul ul {
+    margin-bottom: 0.5rem;
+    padding-left: 1.2rem;
+    list-style: disc;
+}
+
+.anchors {
+    grid-area: anchors;
+    border-left: solid 1px #cdcdcd;
+    padding-left: 15px;
+    padding-top: 2rem;
+    min-width: 180px;
+}
+.anchors h2 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #222;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 0.5rem;
+}
+.anchors ul li {
+    margin-bottom: 0.7rem;
+}
+
+.footer {
+    min-height: 80px;
+    border-top: solid 1px #cdcdcd;
+    background: #f9f9fb;
+    text-align: center;
+    color: #555;
+    font-size: 0.95rem;
+    padding: 1.5rem 0 1rem 0;
+    margin-top: 2rem;
+}
+
+figure {
+    text-align: center;
+    margin: 2rem 0;
+}
+figcaption {
+    font-size: 0.95rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .content {
+        grid-template-areas:
+            "main"
+            "sidebar"
+            "anchors";
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 0.5rem;
+    }
+    .sidebar, .anchors {
+        border: none;
+        padding: 0;
+        min-width: unset;
+    }
+    .sidebar, .anchors {
+        padding-top: 1rem;
+    }
+    .main {
+        padding: 1rem 0;
+    }
+}
